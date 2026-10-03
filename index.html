@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>الطالبة السرية 🕵🏻‍♀️</title>
+
+<style>
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Tahoma,Arial,sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:
+  radial-gradient(circle at 15% 20%,#ffe6f2 0,transparent 28%),
+  radial-gradient(circle at 85% 15%,#e9e4ff 0,transparent 30%),
+  radial-gradient(circle at 80% 85%,#dff8f1 0,transparent 30%),
+  linear-gradient(135deg,#fff9fc,#f7f5ff);
+  color:#463b55;
+  padding:25px;
+}
+
+.app{
+  width:min(900px,100%);
+  margin:auto;
+}
+
+.header{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.header .icon{
+  font-size:55px;
+  margin-bottom:8px;
+}
+
+h1{
+  font-size:clamp(30px,5vw,48px);
+  color:#725a8e;
+  margin-bottom:8px;
+}
+
+.subtitle{
+  color:#8d8099;
+  font-size:17px;
+  line-height:1.8;
+}
+
+.card{
+  background:rgba(255,255,255,.9);
+  border:1px solid rgba(255,255,255,.9);
+  border-radius:28px;
+  padding:28px;
+  box-shadow:0 15px 45px rgba(89,65,112,.10);
+  margin-bottom:20px;
+}
+
+.card-title{
+  font-size:22px;
+  font-weight:bold;
+  color:#655078;
+  margin-bottom:8px;
+}
+
+.hint{
+  color:#95889f;
+  line-height:1.8;
+  margin-bottom:15px;
+}
+
+textarea{
+  width:100%;
+  height:180px;
+  border:2px solid #eee7f4;
+  border-radius:20px;
+  padding:18px;
+  resize:vertical;
+  outline:none;
+  font-size:17px;
+  color:#55475f;
+  background:white;
+  line-height:1.8;
+}
+
+textarea:focus{
+  border-color:#c9b2dc;
+  box-shadow:0 0 0 4px rgba(201,178,220,.15);
+}
+
+button{
+  border:0;
+  border-radius:18px;
+  padding:14px 22px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.2s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+}
+
+.primary{
+  width:100%;
+  margin-top:15px;
+  color:white;
+  background:linear-gradient(135deg,#a986c2,#81639b);
+  box-shadow:0 8px 20px rgba(129,99,155,.20);
+}
+
+.secondary{
+  background:#f1ebf6;
+  color:#6f5882;
+}
+
+.hidden{
+  display:none !important;
+}
+
+
+/* =========================
+   بطاقة المعلمة
+========================= */
+
+.teacher-card{
+  text-align:center;
+}
+
+.teacher-lock{
+  display:inline-block;
+  background:#fff0f6;
+  color:#a15d7b;
+  border-radius:100px;
+  padding:9px 18px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.teacher-icon{
+  font-size:65px;
+  margin:10px 0;
+}
+
+.teacher-title{
+  font-size:25px;
+  color:#655078;
+}
+
+.teacher-name{
+  margin:22px auto;
+  padding:20px;
+  max-width:500px;
+  background:linear-gradient(135deg,#f7effb,#fff4f8);
+  border:2px dashed #d5b9dd;
+  border-radius:22px;
+
+  font-size:clamp(35px,7vw,55px);
+  font-weight:bold;
+  color:#725a8e;
+}
+
+.teacher-note{
+  color:#8c7e96;
+  line-height:1.9;
+  font-size:17px;
+}
+
+
+/* =========================
+   شاشة المهمة
+========================= */
+
+.mission-card{
+  text-align:center;
+  padding:35px 25px;
+}
+
+.secret-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#f4eef9;
+  color:#725a8e;
+  border-radius:100px;
+  padding:9px 16px;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+
+.mission-icon{
+  font-size:70px;
+  margin-bottom:10px;
+  animation:float 2.5s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
+}
+
+.mission-title{
+  font-size:31px;
+  color:#624d77;
+  margin-bottom:10px;
+}
+
+.mission-text{
+  max-width:600px;
+  margin:auto;
+  color:#8c7e96;
+  line-height:1.9;
+  font-size:18px;
+}
+
+.criteria{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:25px;
+}
+
+.criterion{
+  background:#faf8fc;
+  border:2px solid #f1ebf5;
+  border-radius:20px;
+  padding:18px 10px;
+}
+
+.criterion span{
+  display:block;
+  font-size:30px;
+  margin-bottom:8px;
+}
+
+
+/* =========================
+   التقييم
+========================= */
+
+.rating-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:18px;
+}
+
+.rating-item{
+  background:#faf8fc;
+  border:2px solid #f0eaf4;
+  border-radius:22px;
+  padding:18px;
+}
+
+.rating-name{
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:13px;
+}
+
+.stars{
+  display:flex;
+  gap:7px;
+}
+
+.star{
+  flex:1;
+  background:white;
+  border:2px solid #eee6f3;
+  color:#b9a8c5;
+  padding:9px 5px;
+  font-size:20px;
+  border-radius:12px;
+}
+
+.star.active{
+  background:#fff1b8;
+  border-color:#f0cf68;
+  color:#a97e00;
+}
+
+.remember-btn{
+  width:100%;
+  margin-bottom:12px;
+  background:#f1ebf6;
+  color:#6f5882;
+}
+
+.reminder{
+  text-align:center;
+  background:#fff4fa;
+  border:2px dashed #d8b8d5;
+  padding:15px;
+  border-radius:16px;
+  margin-bottom:15px;
+  font-size:20px;
+  font-weight:bold;
+  color:#725a8e;
+}
+
+.reveal-btn{
+  width:100%;
+  margin-top:20px;
+  background:linear-gradient(135deg,#75528f,#4e3a61);
+  color:white;
+  padding:17px;
+  font-size:19px;
+}
+
+
+/* =========================
+   شاشة الكشف
+========================= */
+
+#revealScreen{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:
+  radial-gradient(circle at center,#fff 0,#f4ecfa 55%,#e5d7ef 100%);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+  text-align:center;
+}
+
+.reveal-box{
+  width:min(700px,100%);
+}
+
+#countdown{
+  font-size:clamp(100px,25vw,190px);
+  font-weight:bold;
+  color:#725a8e;
+  animation:pulse .7s infinite alternate;
+}
+
+@keyframes pulse{
+  from{
+    transform:scale(.85);
+    opacity:.6;
+  }
+
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.winner{
+  animation:pop .7s ease;
+}
+
+@keyframes pop{
+  0%{
+    transform:scale(.5);
+    opacity:0;
+  }
+
+  70%{
+    transform:scale(1.08);
+  }
+
+  100%{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+.winner-icon{
+  font-size:80px;
+}
+
+.winner-small{
+  font-size:21px;
+  color:#897795;
+  margin-top:10px;
+}
+
+.winner-name{
+  font-size:clamp(42px,9vw,75px);
+  color:#624a79;
+  margin:15px 0;
+  font-weight:bold;
+}
+
+.result-message{
+  font-size:20px;
+  line-height:1.8;
+  background:rgba(255,255,255,.75);
+  border-radius:22px;
+  padding:18px;
+  margin:20px auto;
+  max-width:550px;
+}
+
+.new-round{
+  background:#74578b;
+  color:white;
+  margin-top:8px;
+}
+
+
+/* =========================
+   الاحتفال
+========================= */
+
+.confetti{
+  position:fixed;
+  top:-20px;
+  width:12px;
+  height:18px;
+  border-radius:3px;
+  z-index:200;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+  }
+}
+
+.small-note{
+  text-align:center;
+  color:#9a8ca3;
+  margin-top:15px;
+  font-size:14px;
+}
+
+
+@media(max-width:650px){
+
+  body{
+    padding:14px;
+  }
+
+  .card{
+    padding:20px;
+    border-radius:22px;
+  }
+
+  .criteria{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .rating-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="app">
+
+<header class="header">
+
+  <div class="icon">🕵🏻‍♀️</div>
+
+  <h1>الطالبة السرية</h1>
+
+  <p class="subtitle">
+    طوال الحصة هناك طالبة تحت الملاحظة 👀<br>
+    لكن لن يعرف أحد من هي حتى النهاية!
+  </p>
+
+</header>
+
+
+<!-- ========================
+     إدخال الأسماء
+========================= -->
+
+<section class="card" id="setupCard">
+
+  <div class="card-title">
+    💗 طالبات الصف
+  </div>
+
+  <p class="hint">
+    اكتبي أسماء الطالبات، كل اسم في سطر مستقل.
+  </p>
+
+  <textarea
+    id="namesInput"
+    placeholder="مثال:
+مريم
+فاطمة
+نور
+سارة
+شهد"></textarea>
+
+  <button
+    class="primary"
+    onclick="chooseSecretStudent()">
+
+    🎲 اختيار الطالبة السرية عشوائيًا
+
+  </button>
+
+  <div class="small-note">
+    🔐 سيظهر الاسم لكِ أولًا قبل بدء الحصة.
+  </div>
+
+</section>
+
+
+
+<!-- ========================
+     اسم الطالبة للمعلمة
+========================= -->
+
+<section
+  class="card teacher-card hidden"
+  id="teacherSecretCard">
+
+  <div class="teacher-lock">
+    🔐 للمعلمة فقط
+  </div>
+
+  <div class="teacher-icon">
+    🤫
+  </div>
+
+  <div class="teacher-title">
+    الطالبة السرية التي تم اختيارها هي...
+  </div>
+
+  <div
+    class="teacher-name"
+    id="teacherStudentName">
+  </div>
+
+  <p class="teacher-note">
+    👀 تذكري هذا الاسم جيدًا.<br>
+    هذه هي الطالبة التي ستراقبينها وتقيمينها طوال الحصة.
+  </p>
+
+  <button
+    class="primary"
+    onclick="startClass()">
+
+    🤫 حفظت الاسم — ابدئي الحصة
+
+  </button>
+
+</section>
+
+
+
+<!-- ========================
+     المهمة بدأت
+========================= -->
+
+<section
+  class="card mission-card hidden"
+  id="missionCard">
+
+  <div class="secret-badge">
+    🔐 المهمة السرية نشطة
+  </div>
+
+  <div class="mission-icon">
+    🕵🏻‍♀️
+  </div>
+
+  <div class="mission-title">
+    تم اختيار الطالبة السرية!
+  </div>
+
+  <p class="mission-text">
+
+    طوال الحصة سأراقب طالبة واحدة سرًا…
+
+    <br>
+
+    هل ستحافظ على هدوئها وتركيزها وتفاعلها؟
+
+    <br>
+
+    <strong>قد تكونين أنتِ 👀🤫</strong>
+
+  </p>
+
+
+  <div class="criteria">
+
+    <div class="criterion">
+      <span>🤫</span>
+      الهدوء
+    </div>
+
+    <div class="criterion">
+      <span>👀</span>
+      التركيز
+    </div>
+
+    <div class="criterion">
+      <span>🙋🏻‍♀️</span>
+      المشاركة
+    </div>
+
+    <div class="criterion">
+      <span>✨</span>
+      الالتزام
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================
+     تقييم المعلمة
+========================= -->
+
+<section
+  class="card hidden"
+  id="ratingCard">
+
+  <div class="card-title">
+    📝 تقييم الطالبة السرية
+  </div>
+
+  <p class="hint">
+    قيّمي أداء الطالبة التي تم اختيارها خلال الحصة 🤫
+  </p>
+
+
+  <!-- تذكير بالاسم -->
+
+  <button
+    class="remember-btn"
+    onclick="showSecretAgain()">
+
+    👀 نسيتُ من هي الطالبة السرية
+
+  </button>
+
+  <div
+    id="secretReminder"
+    class="reminder hidden">
+  </div>
+
+
+
+  <div class="rating-grid">
+
+
+    <!-- الهدوء -->
+
+    <div class="rating-item">
+
+      <div class="rating-name">
+        🤫 الهدوء
+      </div>
+
+      <div
+        class="stars"
+        data-category="quiet">
+
+        <button
+          class="star"
+          onclick="rate(this,1)">★</button>
+
+        <button
+          class="star"
+          onclick="rate(this,2)">★</button>
+
+        <button
+          class="star"
+          onclick="rate(this,3)">★</button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- التركيز -->
+
+    <div class="rating-item">
+
+      <div class="rating-name">
+        👀 التركيز
+      </div>
+
+      <div
+        class="stars"
+        data-category="focus">
+
+        <button
+          class="star"
+          onclick="rate(this,1)">★</button>
+
+        <button
+          class="star"
+          onclick="rate(this,2)">★</button>
+
+        <button
+          class="star"
+          onclick="rate(this,3)">★</button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- المشاركة -->
+
+    <div class="rating-item">
+
+      <div class="rating-name">
+        🙋🏻‍♀️ المشاركة
+      </div>
+
+      <div
+        class="stars"
+        data-category="participation">
+
+        <button
+          class="star"
+          onclick="rate(this,1)">★</button>
+
+        <button
+          class="star"
+          onclick="rate(this,2)">★</button>
+
+        <button
+          class="star"
+          onclick="rate(this,3)">★</button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- الالتزام -->
+
+    <div class="rating-item">
+
+      <div class="rating-name">
+        ✨ الالتزام
+      </div>
+
+      <div
+        class="stars"
+        data-category="commitment">
+
+        <button
+          class="star"
+          onclick="rate(this,1)">★</button>
+
+        <button
+          class="star"
+          onclick="rate(this,2)">★</button>
+
+        <button
+          class="star"
+          onclick="rate(this,3)">★</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <button
+    class="reveal-btn"
+    onclick="startReveal()">
+
+    🎉 حان وقت كشف الطالبة السرية!
+
+  </button>
+
+</section>
+
+</div>
+
+
+
+<!-- ========================
+     شاشة الكشف
+========================= -->
+
+<div
+  id="revealScreen"
+  class="hidden">
+
+  <div class="reveal-box">
+
+    <div id="countdown"></div>
+
+
+    <div
+      id="winner"
+      class="winner hidden">
+
+      <div class="winner-icon">
+        🌟
+      </div>
+
+      <div class="winner-small">
+        الطالبة السرية اليوم هي…
+      </div>
+
+      <div
+        class="winner-name"
+        id="winnerName">
+      </div>
+
+      <div
+        class="result-message"
+        id="resultMessage">
+      </div>
+
+      <button
+        class="new-round"
+        onclick="newRound()">
+
+        💗 بدء حصة جديدة
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+/* ========================
+   البيانات
+========================= */
+
+let secretStudent = "";
+
+let lastStudent = "";
+
+let ratings = {
+  quiet:0,
+  focus:0,
+  participation:0,
+  commitment:0
+};
+
+
+
+/* ========================
+   اختيار الطالبة
+========================= */
+
+function chooseSecretStudent(){
+
+  const input =
+    document.getElementById("namesInput").value;
+
+  const names =
+    input
+    .split("\n")
+    .map(name => name.trim())
+    .filter(name => name !== "");
+
+
+  if(names.length < 2){
+
+    alert("أضيفي اسم طالبتين على الأقل 💗");
+
+    return;
+  }
+
+
+  /*
+    اختيار عشوائي.
+
+    وإذا كان عندنا أكثر من طالبتين،
+    نحاول ألا نختار نفس طالبة الجولة السابقة.
+  */
+
+  let availableNames = names;
+
+  if(names.length > 1 && lastStudent !== ""){
+
+    const withoutLast =
+      names.filter(name => name !== lastStudent);
+
+    if(withoutLast.length > 0){
+      availableNames = withoutLast;
+    }
+  }
+
+
+  const randomIndex =
+    Math.floor(
+      Math.random() * availableNames.length
+    );
+
+
+  secretStudent =
+    availableNames[randomIndex];
+
+
+  lastStudent = secretStudent;
+
+
+  ratings = {
+    quiet:0,
+    focus:0,
+    participation:0,
+    commitment:0
+  };
+
+
+  /* إزالة أي تقييم قديم */
+
+  document
+    .querySelectorAll(".star")
+    .forEach(star => {
+      star.classList.remove("active");
+    });
+
+
+  /* إخفاء قائمة الأسماء */
+
+  document
+    .getElementById("setupCard")
+    .classList.add("hidden");
+
+
+  /* إظهار الاسم للمعلمة */
+
+  document
+    .getElementById("teacherStudentName")
+    .textContent = secretStudent;
+
+
+  document
+    .getElementById("teacherSecretCard")
+    .classList.remove("hidden");
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+
+/* ========================
+   بدء الحصة
+========================= */
+
+function startClass(){
+
+  /* إخفاء اسم الطالبة */
+
+  document
+    .getElementById("teacherSecretCard")
+    .classList.add("hidden");
+
+
+  /* إظهار شاشة الطالبات */
+
+  document
+    .getElementById("missionCard")
+    .classList.remove("hidden");
+
+
+  /* إظهار التقييم */
+
+  document
+    .getElementById("ratingCard")
+    .classList.remove("hidden");
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+
+/* ========================
+   نسيت الطالبة 😂
+========================= */
+
+let reminderTimer = null;
+
+function showSecretAgain(){
+
+  const reminder =
+    document.getElementById("secretReminder");
+
+
+  reminder.textContent =
+    "🔐 الطالبة السرية هي: " + secretStudent;
+
+
+  reminder.classList.remove("hidden");
+
+
+  /*
+    لو ضغطتي الزر أكثر من مرة
+    ما تتداخل المؤقتات.
+  */
+
+  clearTimeout(reminderTimer);
+
+
+  reminderTimer =
+    setTimeout(() => {
+
+      reminder.classList.add("hidden");
+
+    },2000);
+
+}
+
+
+
+/* ========================
+   التقييم
+========================= */
+
+function rate(button,value){
+
+  const starsContainer =
+    button.parentElement;
+
+  const category =
+    starsContainer.dataset.category;
+
+
+  ratings[category] = value;
+
+
+  const stars =
+    starsContainer.querySelectorAll(".star");
+
+
+  stars.forEach((star,index) => {
+
+    if(index < value){
+
+      star.classList.add("active");
+
+    }else{
+
+      star.classList.remove("active");
+
+    }
+
+  });
+
+}
+
+
+
+/* ========================
+   بدء الكشف
+========================= */
+
+function startReveal(){
+
+  if(!secretStudent){
+    return;
+  }
+
+
+  const screen =
+    document.getElementById("revealScreen");
+
+  const countdown =
+    document.getElementById("countdown");
+
+  const winner =
+    document.getElementById("winner");
+
+
+  screen.classList.remove("hidden");
+
+  winner.classList.add("hidden");
+
+
+  let number = 3;
+
+  countdown.textContent = number;
+
+
+  const timer =
+    setInterval(() => {
+
+      number--;
+
+
+      if(number > 0){
+
+        countdown.textContent = number;
+
+      }else{
+
+        clearInterval(timer);
+
+        countdown.textContent = "";
+
+        showWinner();
+
+      }
+
+    },900);
+
+}
+
+
+
+/* ========================
+   إظهار النتيجة
+========================= */
+
+function showWinner(){
+
+  const winner =
+    document.getElementById("winner");
+
+
+  document
+    .getElementById("winnerName")
+    .textContent =
+    secretStudent + " 💗";
+
+
+  const total =
+    ratings.quiet +
+    ratings.focus +
+    ratings.participation +
+    ratings.commitment;
+
+
+  let message = "";
+
+
+  if(total >= 10){
+
+    message =
+    "أبدعتِ اليوم! 🌟 حافظتِ على هدوئك وتركيزك وتفاعلك والتزامك، واستحققتِ نجمة الطالبة السرية ✨";
+
+    createConfetti();
+
+  }
+
+  else if(total >= 7){
+
+    message =
+    "أداء جميل جدًا 💗 كنتِ قريبة من النجمة! استمري بهذا التميز ✨";
+
+    createConfetti();
+
+  }
+
+  else{
+
+    message =
+    "كنتِ الطالبة السرية اليوم 💗 وفي الحصة القادمة لديكِ فرصة جديدة للتألق أكثر 🌷";
+
+  }
+
+
+  document
+    .getElementById("resultMessage")
+    .textContent = message;
+
+
+  winner.classList.remove("hidden");
+
+}
+
+
+
+/* ========================
+   قصاصات الاحتفال
+========================= */
+
+function createConfetti(){
+
+  const colors = [
+    "#d8b4e2",
+    "#ffd4e5",
+    "#ffe29a",
+    "#bdebdc",
+    "#c9c1f5"
+  ];
+
+
+  for(let i = 0; i < 70; i++){
+
+    const confetti =
+      document.createElement("div");
+
+
+    confetti.classList.add("confetti");
+
+
+    confetti.style.left =
+      Math.random() * 100 + "vw";
+
+
+    confetti.style.background =
+      colors[
+        Math.floor(
+          Math.random() * colors.length
+        )
+      ];
+
+
+    confetti.style.animationDuration =
+      (Math.random() * 2 + 2) + "s";
+
+
+    confetti.style.animationDelay =
+      Math.random() * .5 + "s";
+
+
+    document.body.appendChild(confetti);
+
+
+    setTimeout(() => {
+      confetti.remove();
+    },4500);
+
+  }
+
+}
+
+
+
+/* ========================
+   حصة جديدة
+========================= */
+
+function newRound(){
+
+  document
+    .getElementById("revealScreen")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("setupCard")
+    .classList.remove("hidden");
+
+
+  document
+    .getElementById("teacherSecretCard")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("missionCard")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("ratingCard")
+    .classList.add("hidden");
+
+
+  document
+    .getElementById("secretReminder")
+    .classList.add("hidden");
+
+
+  document
+    .querySelectorAll(".star")
+    .forEach(star => {
+
+      star.classList.remove("active");
+
+    });
+
+
+  secretStudent = "";
+
+
+  ratings = {
+    quiet:0,
+    focus:0,
+    participation:0,
+    commitment:0
+  };
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+</script>
+
+</body>
+</html>
